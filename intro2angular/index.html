@@ -9,10 +9,12 @@
 
   <body>
     <div ng-controller="IndexController">
-      <p>{{message}}</p>
+      <input type="search" ng-model="search">
 
       <ul>
-        <li ng-repeat="option in options">{{option}}</li>
+        <li ng-repeat="option in options | orderBy: '-first_name' | filter: search">
+          {{option.first_name}} - {{option.age | currency: '£'}}
+        </li>
       </ul>
     </div>
   </body>
