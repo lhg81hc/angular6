@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning AngularJS</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
@@ -8,6 +10,8 @@
   </head>
 
   <body>
+    <header ng-include src="'header.html'"></header>
+<!--    <ng-include src="'header.html'"></ng-include>-->
     <div ng-controller="IndexController">
       <input type="search" ng-model="search">
 
