@@ -12,16 +12,9 @@
       <input type="text" ng-model="favMeat" placeholder="Enter your favorite meat" />
     </label>
     <label>Options:</label>
+
     <ul>
-      <li>
-        {{options[0]}}
-      </li>
-      <li>
-        {{options[1]}}
-      </li>
-      <li>
-        {{options[2]}}
-      </li>
+      <li  ng-repeat="option in options">{{option}}</li>
     </ul>
     <p>Your favorite meat is: {{favMeat}}</p>
   </body>
