@@ -5,8 +5,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
     .when('/home', {
       templateUrl: '/app/views/home.html'
     })
-    .when('/directory', {
-      templateUrl: '/app/views/directory.html',
+    .when('/characters', {
+      templateUrl: '/app/views/characters.html',
       controller: 'IndexController'
     }).otherwise({
       redirectTo: '/home'
