@@ -12,14 +12,30 @@
   <body>
     <header ng-include src="'header.html'"></header>
 <!--    <ng-include src="'header.html'"></ng-include>-->
-    <div ng-controller="IndexController">
-      <input type="search" ng-model="search">
+    <div class="content">
+      <div ng-controller="IndexController">
+        <label>
+          <input type="search" ng-model="search">
+        </label>
 
-      <ul>
-        <li ng-repeat="option in options | orderBy: '-first_name' | filter: search">
-          {{option.first_name}} - {{option.age | currency: '£'}}
-        </li>
-      </ul>
+        <div>
+          <label>Available:</label>
+          <ul>
+            <li ng-repeat="option in options | orderBy: 'first_name' | filter: search" ng-show="option.available">
+              {{option.first_name}} {{option.last_name}} - {{option.age}} - {{option.gender_abbreviation}}
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <label>Unavailable:</label>
+          <ul>
+            <li ng-repeat="option in options | orderBy: 'first_name' | filter: search" ng-hide="option.available">
+              {{option.first_name}} {{option.last_name}} - {{option.age}} - {{option.gender_abbreviation}}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

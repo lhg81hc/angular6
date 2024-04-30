@@ -6,17 +6,34 @@ myApp.controller('IndexController', ['$scope', function($scope) {
     {
       first_name: 'Thad',
       last_name: 'Le',
-      age: 33
+      age: 33,
+      available: true,
+      gender: 'Male',
+      gender_abbreviation: 'M',
     },
     {
       first_name: 'Jason',
       last_name: 'Bourne',
-      age: 35,
+      age: 30,
+      available: true,
+      gender: 'Male',
+      gender_abbreviation: 'M',
     },
     {
-      first_name: 'David',
-      last_name: 'Webb',
-      age: null,
+      first_name: 'Ethan',
+      last_name: 'Hunt',
+      age: 32,
+      available: false,
+      gender: 'Male',
+      gender_abbreviation: 'M',
+    },
+    {
+      first_name: 'Evelyn',
+      last_name: 'Salt',
+      age: 25,
+      available: true,
+      gender: 'Female',
+      gender_abbreviation: 'F'
     }
   ];
 }]);
