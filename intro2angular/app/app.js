@@ -1,4 +1,17 @@
-let myApp = angular.module('myApp', []);
+let myApp = angular.module('myApp', ['ngRoute']);
+
+myApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    .when('/home', {
+      templateUrl: '/app/views/home.html'
+    })
+    .when('/directory', {
+      templateUrl: '/app/views/directory.html',
+      controller: 'IndexController'
+    }).otherwise({
+      redirectTo: '/home'
+    })
+}])
 
 myApp.controller('IndexController', ['$scope', function($scope) {
   $scope.message = "This is the message from $scope";

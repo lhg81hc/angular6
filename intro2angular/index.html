@@ -5,97 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning AngularJS</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-    <script src="app/lib/angular.min.js"></script>
-    <script src="app/app.js"></script>
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app\lib\angular-route.min.js"></script>
+    <script src="app\app.js"></script>
   </head>
-
   <body>
-    <header ng-include src="'header.html'"></header>
-<!--    <ng-include src="'header.html'"></ng-include>-->
-    <div class="content">
-      <div ng-controller="IndexController">
-        <label>
-          <input type="search" ng-model="search" placeholder="Search by first name">
-        </label>
-
-        <p></p>
-        <table class="table">
-          <thead>
-            <tr>
-              <th></th>
-              <th ng-click="order = 'first_name'">First Name</th>
-              <th ng-click="order = 'last_name'">Last Name</th>
-              <th ng-click="order = 'last_name'">Gender</th>
-              <th ng-click="">Age Name</th>
-              <th ng-click="">Available</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="character in characters | orderBy: order | filter: search">
-              <td>
-                <img
-                  class="avatar rounded-circle"
-                  ng-src="https://i.pravatar.cc/150?img={{character.id}}"
-                  ng-show="{{character.id <= 50}}"
-                  alt="Avatar"
-                >
-              </td>
-              <td>{{character.first_name}}</td>
-              <td>{{character.last_name}}</td>
-              <td>{{character.age}}</td>
-              <td class="text-capitalize">{{character.gender}}</td>
-              <td>
-                <span ng-class="character.available ? 'badge badge-success' : 'badge badge-secondary'">
-                  {{character.available ? 'YES' : 'NO'}}
-                <span>
-              </td>
-              <td><span class="remove" ng-click="removeCharacter(character)">x</span></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <fieldset>
-          <form ng-submit="addCharacter()">
-            <input type="text" placeholder="First Name" ng-model="newCharacter.first_name">
-            <input type="text" placeholder="Last Name" ng-model="newCharacter.last_name">
-            <input type="number" placeholder="Age" ng-model="newCharacter.age">
-
-            </br>
-            <label style="font-weight: bold;">
-              Availability:
-            </label>
-            <label>
-              <input type="radio" ng-model="newCharacter.available" value=true>
-              Available
-            </label>
-            <label>
-              <input type="radio" ng-model="newCharacter.available" value=false>
-              Unavailable
-            </label><br/>
-
-
-            <label style="font-weight: bold;">
-              Gender:
-            </label>
-            <label>
-              <input type="radio" ng-model="newCharacter.gender" value="f">
-              Female
-            </label>
-            <label>
-              <input type="radio" ng-model="newCharacter.gender" value="m">
-              Male
-            </label>
-            <label>
-              <input type="radio" ng-model="newCharacter.gender" value="n">
-              Non-binary
-            </label>
-            <br/>
-
-            <input type="submit" value="Add" />
-          </form>
-        </fieldset>
-      </div>
-    </div>
+    <header ng-include="'header.html'"></header>
+    <main ng-view></main>
   </body>
 </html>
