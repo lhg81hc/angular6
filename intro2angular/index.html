@@ -15,26 +15,36 @@
     <div class="content">
       <div ng-controller="IndexController">
         <label>
-          <input type="search" ng-model="search">
+          <input type="search" ng-model="search" placeholder="Search by first name">
         </label>
 
-        <div>
-          <label>Available:</label>
-          <ul>
-            <li ng-repeat="option in options | orderBy: 'first_name' | filter: search" ng-show="option.available">
-              {{option.first_name}} {{option.last_name}} - {{option.age}} - {{option.gender_abbreviation}}
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <label>Unavailable:</label>
-          <ul>
-            <li ng-repeat="option in options | orderBy: 'first_name' | filter: search" ng-hide="option.available">
-              {{option.first_name}} {{option.last_name}} - {{option.age}} - {{option.gender_abbreviation}}
-            </li>
-          </ul>
-        </div>
+        <p></p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th ng-click="order = 'first_name'">First Name</th>
+              <th ng-click="order = 'last_name'">Last Name</th>
+              <th ng-click="">Age Name</th>
+              <th ng-click="">Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="character in characters | orderBy: order | filter: search">
+              <td>{{character.first_name}}</td>
+              <td>{{character.last_name}}</td>
+              <td>{{character.age}}</td>
+              <td>
+                <span ng-if="character.available" class="badge badge-success">
+                  YES
+                <span>
+                <span ng-if="!character.available" class="badge badge-success">
+                  NO
+                <span>
+              </td>
+              <td><span class="remove" ng-click="removeCharacter(character)">x</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </body>
