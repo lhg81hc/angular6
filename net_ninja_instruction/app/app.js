@@ -13,42 +13,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
     })
 }])
 
-myApp.controller('IndexController', ['$scope', function($scope) {
-  $scope.message = "This is the message from $scope";
-  $scope.characters = [
-    {
-      id: 1,
-      first_name: 'Thad',
-      last_name: 'Le',
-      age: 33,
-      available: true,
-      gender: 'm',
-    },
-    {
-      id: 2,
-      first_name: 'Jason',
-      last_name: 'Bourne',
-      age: 30,
-      available: true,
-      gender: 'm',
-    },
-    {
-      id: 3,
-      first_name: 'Ethan',
-      last_name: 'Hunt',
-      age: 32,
-      available: false,
-      gender: 'm',
-    },
-    {
-      id: 50,
-      first_name: 'Evelyn',
-      last_name: 'Salt',
-      age: 25,
-      available: true,
-      gender: 'f',
-    }
-  ];
+myApp.controller('IndexController', ['$scope', '$http', function($scope, $http) {
+  $http.get('/app/data/characters.json').then(function(res) {
+    $scope.characters = res.data;
+  })
 
   $scope.removeCharacter = function(character) {
     let removedCharacter = $scope.characters.indexOf(character);
@@ -63,7 +31,5 @@ myApp.controller('IndexController', ['$scope', function($scope) {
       gender: $scope.newCharacter.gender,
       available: $scope.newCharacter.available === 'true',
     });
-
-    // $scope.newCharacter = {};
   };
 }]);
