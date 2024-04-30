@@ -24,8 +24,10 @@
             <tr>
               <th ng-click="order = 'first_name'">First Name</th>
               <th ng-click="order = 'last_name'">Last Name</th>
+              <th ng-click="order = 'last_name'">Gender</th>
               <th ng-click="">Age Name</th>
               <th ng-click="">Available</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -33,18 +35,60 @@
               <td>{{character.first_name}}</td>
               <td>{{character.last_name}}</td>
               <td>{{character.age}}</td>
+              <td class="text-capitalize">{{character.gender}}</td>
               <td>
-                <span ng-if="character.available" class="badge badge-success">
-                  YES
+                <span ng-class="character.available == true ? 'badge badge-success' : 'badge badge-secondary'">
+                  {{character.available ? 'YES' : 'NO'}}
                 <span>
-                <span ng-if="!character.available" class="badge badge-success">
-                  NO
-                <span>
+<!--                <span ng-if="!character.available" class="badge badge-secondary">-->
+<!--                  NO-->
+<!--                <span>-->
               </td>
               <td><span class="remove" ng-click="removeCharacter(character)">x</span></td>
             </tr>
           </tbody>
         </table>
+
+        <fieldset>
+          <form ng-submit="addCharacter()">
+            <input type="text" placeholder="First Name" ng-model="newCharacter.first_name">
+            <input type="text" placeholder="Last Name" ng-model="newCharacter.last_name">
+            <input type="number" placeholder="Age" ng-model="newCharacter.age">
+
+            </br>
+            <label style="font-weight: bold;">
+              Availability:
+            </label>
+            <label>
+              <input type="radio" ng-model="newCharacter.available" value=true>
+              Available
+            </label>
+            <label>
+              <input type="radio" ng-model="newCharacter.available" value=false>
+              Unavailable
+            </label><br/>
+
+
+            <label style="font-weight: bold;">
+              Gender:
+            </label>
+            <label>
+              <input type="radio" ng-model="newCharacter.gender" value="f">
+              Female
+            </label>
+            <label>
+              <input type="radio" ng-model="newCharacter.gender" value="m">
+              Male
+            </label>
+            <label>
+              <input type="radio" ng-model="newCharacter.gender" value="n">
+              Non-binary
+            </label>
+            <br/>
+
+            <input type="submit" value="Add" />
+          </form>
+        </fieldset>
       </div>
     </div>
   </body>

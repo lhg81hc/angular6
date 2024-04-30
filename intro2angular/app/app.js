@@ -41,4 +41,16 @@ myApp.controller('IndexController', ['$scope', function($scope) {
     let removedCharacter = $scope.characters.indexOf(character);
     $scope.characters.splice(removedCharacter, 1);
   };
+
+  $scope.addCharacter = function() {
+    $scope.characters.push({
+      first_name: $scope.newCharacter.first_name,
+      last_name: $scope.newCharacter.last_name,
+      age: parseInt($scope.newCharacter.age),
+      gender: $scope.newCharacter.gender,
+      available: $scope.newCharacter.available,
+    });
+
+    // $scope.newCharacter = {};
+  };
 }]);

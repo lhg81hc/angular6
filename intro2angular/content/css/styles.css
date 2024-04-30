@@ -57,11 +57,11 @@ main{
 
 .content button,
 .content input[type="submit"]{
-  background: #fff;
-  padding: 10px;
+  background: blue;
+  padding: 10px 30px;
   border-radius: 10px;
   cursor: pointer;
-  color: #777;
+  color: white;
   border: 0;
   box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
   font-size: 16px;
@@ -94,18 +94,17 @@ main{
 }
 
 .content input{
-  width: 100%;
   padding: 10px;
   border-radius: 10px;
   border: 2px solid #ddd;
   margin: 10px 0;
 }
 
-.content input[type="submit"]:last-child{
-  width: 150px;
-  display: block;
-  margin: 15px auto;
-}
+/*.content input[type="submit"]:last-child{*/
+/*  width: 150px;*/
+/*  display: block;*/
+/*  margin: 15px auto;*/
+/*}*/
 
 .remove{
   float: right;
@@ -164,4 +163,8 @@ th {
 .badge-secondary {
   color: #fff;
   background-color: #6c757d;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
 }
