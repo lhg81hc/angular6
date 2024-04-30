@@ -22,6 +22,7 @@
         <table class="table">
           <thead>
             <tr>
+              <th></th>
               <th ng-click="order = 'first_name'">First Name</th>
               <th ng-click="order = 'last_name'">Last Name</th>
               <th ng-click="order = 'last_name'">Gender</th>
@@ -32,17 +33,22 @@
           </thead>
           <tbody>
             <tr ng-repeat="character in characters | orderBy: order | filter: search">
+              <td>
+                <img
+                  class="avatar rounded-circle"
+                  ng-src="https://i.pravatar.cc/150?img={{character.id}}"
+                  ng-show="{{character.id <= 50}}"
+                  alt="Avatar"
+                >
+              </td>
               <td>{{character.first_name}}</td>
               <td>{{character.last_name}}</td>
               <td>{{character.age}}</td>
               <td class="text-capitalize">{{character.gender}}</td>
               <td>
-                <span ng-class="character.available == true ? 'badge badge-success' : 'badge badge-secondary'">
+                <span ng-class="character.available ? 'badge badge-success' : 'badge badge-secondary'">
                   {{character.available ? 'YES' : 'NO'}}
                 <span>
-<!--                <span ng-if="!character.available" class="badge badge-secondary">-->
-<!--                  NO-->
-<!--                <span>-->
               </td>
               <td><span class="remove" ng-click="removeCharacter(character)">x</span></td>
             </tr>

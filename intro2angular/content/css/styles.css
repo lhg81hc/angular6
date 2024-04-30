@@ -168,3 +168,16 @@ th {
 .text-capitalize {
   text-transform: capitalize !important;
 }
+
+.avatar {
+  width: 32px;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+img.avatar {
+  vertical-align: middle;
+  border-style: none;
+}

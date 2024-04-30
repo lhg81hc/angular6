@@ -4,7 +4,7 @@ myApp.controller('IndexController', ['$scope', function($scope) {
   $scope.message = "This is the message from $scope";
   $scope.characters = [
     {
-      id: 233,
+      id: 1,
       first_name: 'Thad',
       last_name: 'Le',
       age: 33,
@@ -12,7 +12,7 @@ myApp.controller('IndexController', ['$scope', function($scope) {
       gender: 'm',
     },
     {
-      id: 644,
+      id: 2,
       first_name: 'Jason',
       last_name: 'Bourne',
       age: 30,
@@ -20,7 +20,7 @@ myApp.controller('IndexController', ['$scope', function($scope) {
       gender: 'm',
     },
     {
-      id: 113,
+      id: 3,
       first_name: 'Ethan',
       last_name: 'Hunt',
       age: 32,
@@ -28,7 +28,7 @@ myApp.controller('IndexController', ['$scope', function($scope) {
       gender: 'm',
     },
     {
-      id: 10,
+      id: 50,
       first_name: 'Evelyn',
       last_name: 'Salt',
       age: 25,
@@ -48,7 +48,7 @@ myApp.controller('IndexController', ['$scope', function($scope) {
       last_name: $scope.newCharacter.last_name,
       age: parseInt($scope.newCharacter.age),
       gender: $scope.newCharacter.gender,
-      available: $scope.newCharacter.available,
+      available: $scope.newCharacter.available === 'true',
     });
 
     // $scope.newCharacter = {};
