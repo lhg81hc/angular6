@@ -21,7 +21,7 @@ myApp.directive('randomCharacter', [function() {
       characters: '=',
       title: '=',
     },
-    template: '<img ng-src="https://i.pravatar.cc/150?img={{random}}">',
+    templateUrl: '/app/templates/random_character.html',
     controller: function($scope) {
       $scope.random = Math.floor(Math.random() * 20)
     }
