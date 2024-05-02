@@ -3,7 +3,8 @@ let myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/home', {
-      templateUrl: '/app/views/home.html'
+      templateUrl: '/app/views/home.html',
+      controller: 'IndexController'
     })
     .when('/characters', {
       templateUrl: '/app/views/characters.html',
@@ -12,6 +13,20 @@ myApp.config(['$routeProvider', function($routeProvider) {
       redirectTo: '/home'
     })
 }])
+
+myApp.directive('randomCharacter', [function() {
+  return {
+    restrict: 'E',
+    scope: {
+      characters: '=',
+      title: '=',
+    },
+    templateUrl: '/app/templates/random_character.html',
+    controller: function($scope) {
+      $scope.random = Math.floor(Math.random() * 20)
+    }
+  };
+}]);
 
 myApp.controller('IndexController', ['$scope', '$http', function($scope, $http) {
   $http.get('/app/data/characters.json').then(function(res) {
