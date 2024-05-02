@@ -22,6 +22,7 @@ myApp.directive('randomCharacter', [function() {
       title: '=',
     },
     transclude: true,
+    replace: true,
     templateUrl: '/app/templates/random_character.html',
     controller: function($scope) {
       $scope.random = Math.floor(Math.random() * 20)
