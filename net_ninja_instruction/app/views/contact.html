@@ -1,5 +1,5 @@
 <div class="content">
-  <form name="contactForm" style="width: 50%">
+  <form name="contactForm" ng-submit="sendMessage()" style="width: 50%">
     <label class="form-control">
       <input type="text" placeholder="Name" name="name" ng-model="contact.name" ng-required="true" />
     </label>

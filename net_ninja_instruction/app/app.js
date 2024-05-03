@@ -7,7 +7,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
       controller: 'IndexController'
     })
     .when('/contact', {
-      templateUrl: '/app/views/contact.html'
+      templateUrl: '/app/views/contact.html',
+      controller: 'ContactController',
+    })
+    .when('/contact-success', {
+      templateUrl: '/app/views/contact-success.html'
     })
     .when('/characters', {
       templateUrl: '/app/views/characters.html',
@@ -56,4 +60,10 @@ myApp.controller('IndexController', ['$scope', '$http', function($scope, $http) 
   $scope.removeAll = function() {
     $scope.characters = [];
   }
+}]);
+
+myApp.controller('ContactController', ['$scope', '$location', function($scope, $location) {
+  $scope.sendMessage = function() {
+    $location.path('contact-success');
+  };
 }]);
