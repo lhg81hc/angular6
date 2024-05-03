@@ -210,3 +210,8 @@ main.ng-enter.ng-enter-active {
 #character-list tbody {
   overflow-x: hidden;
 }
+
+#character-list tr.ng-leave-stagger {
+  transition-delay: 0.2s;
+  transition-duration: 0s;
+}

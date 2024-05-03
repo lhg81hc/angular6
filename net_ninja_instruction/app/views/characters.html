@@ -1,8 +1,10 @@
 <div class="content">
-  <label>
+  <label style="float: left">
     <input type="search" ng-model="search" placeholder="Search by first name">
   </label>
-
+  <label style="float: right">
+    <button type="button" style="margin: 10px 0;" ng-click="removeAll()">Remove All</button>
+  </label>
   <p></p>
   <table class="table" id="character-list">
     <thead>

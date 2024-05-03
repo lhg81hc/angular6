@@ -49,4 +49,8 @@ myApp.controller('IndexController', ['$scope', '$http', function($scope, $http) 
       available: $scope.newCharacter.available === 'true',
     });
   };
+
+  $scope.removeAll = function() {
+    $scope.characters = [];
+  }
 }]);
