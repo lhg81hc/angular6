@@ -4,7 +4,7 @@
   </label>
 
   <p></p>
-  <table class="table">
+  <table class="table" id="character-list">
     <thead>
     <tr>
       <th></th>
@@ -17,26 +17,26 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="character in characters | orderBy: order | filter: search">
-      <td>
-        <img
-          class="avatar rounded-circle"
-          ng-src="https://i.pravatar.cc/150?img={{character.id}}"
-          ng-show="{{character.id <= 50}}"
-          alt="Avatar"
-        >
-      </td>
-      <td>{{character.first_name}}</td>
-      <td>{{character.last_name}}</td>
-      <td>{{character.age}}</td>
-      <td class="text-capitalize">{{character.gender}}</td>
-      <td>
-        <span ng-class="character.available ? 'badge badge-success' : 'badge badge-secondary'">
-          {{character.available ? 'YES' : 'NO'}}
-        <span>
-      </td>
-      <td><span class="remove" ng-click="removeCharacter(character)">x</span></td>
-    </tr>
+      <tr ng-repeat="character in characters | orderBy: order | filter: search">
+        <td>
+          <img
+            class="avatar rounded-circle"
+            ng-src="https://i.pravatar.cc/150?img={{character.id}}"
+            ng-show="{{character.id <= 50}}"
+            alt="Avatar"
+          >
+        </td>
+        <td>{{character.first_name}}</td>
+        <td>{{character.last_name}}</td>
+        <td>{{character.age}}</td>
+        <td class="text-capitalize">{{character.gender}}</td>
+        <td>
+          <span ng-class="character.available ? 'badge badge-success' : 'badge badge-secondary'">
+            {{character.available ? 'YES' : 'NO'}}
+          <span>
+        </td>
+        <td><span class="remove" ng-click="removeCharacter(character)">x</span></td>
+      </tr>
     </tbody>
   </table>
 
