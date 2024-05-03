@@ -1,0 +1,16 @@
+<div class="content">
+  <form name="contactForm" style="width: 50%">
+    <label class="form-control">
+      <input type="text" placeholder="Name" name="name" ng-model="contact.name" ng-required="true" />
+    </label>
+    <label class="form-control">
+      <input type="text" placeholder="Email" name="email" ng-model="contact.email" ng-required="true"/>
+    </label>
+    <label class="form-control">
+      <textarea placeholder="Your Message" name="message" ng-model="contact.message" ng-required="true"></textarea>
+    </label>
+    <label>
+      <input type="submit" value="Send">
+    </label>
+  </form>
+</div>

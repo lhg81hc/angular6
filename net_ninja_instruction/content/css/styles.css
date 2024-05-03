@@ -93,7 +93,7 @@ main{
   font-size: 22px;
 }
 
-.content input{
+.content input, textarea{
   padding: 10px;
   border-radius: 10px;
   border: 2px solid #ddd;
@@ -214,4 +214,17 @@ main.ng-enter.ng-enter-active {
 #character-list tr.ng-leave-stagger {
   transition-delay: 0.2s;
   transition-duration: 0s;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+}
+
+.form-control input, textarea {
+  width: 100%;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border-color: #ea868f;
 }
