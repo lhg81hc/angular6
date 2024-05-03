@@ -228,3 +228,8 @@ main.ng-enter.ng-enter-active {
 input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
   border-color: #ea868f;
 }
+
+input[disabled='disabled'] {
+  opacity: 0.4;
+  cursor: not-allowed !important;
+}
