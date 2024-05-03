@@ -1,4 +1,4 @@
-let myApp = angular.module('myApp', ['ngRoute']);
+let myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -49,4 +49,8 @@ myApp.controller('IndexController', ['$scope', '$http', function($scope, $http) 
       available: $scope.newCharacter.available === 'true',
     });
   };
+
+  $scope.removeAll = function() {
+    $scope.characters = [];
+  }
 }]);
