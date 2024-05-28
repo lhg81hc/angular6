@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-controller="MyController">
+
+<html lang="en" an-app>
+  <head>
+    <meta charset="UTF-8">
+    <title>Phone Gallery</title>
+    <link rel="stylesheet" href="app/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app/app.css" />
+  </head>
   <body>
-    <main>
-      <p>Hello {{greetMe}}</p>
-    </main>
+    <ul>
+      <li>
+        <span>Nexus S</span>
+        <p>
+          Fast just got faster with Nexus S.
+        </p>
+      </li>
 
-    <script src="app/lib/angular.js"></script>
-    <script>
-      angular.module('myApp', [])
-        .controller('MyController', ['$scope', function ($scope) {
-          $scope.greetMe = 'Thad';
-        }])
+      <li>
+        <span>Motorola XOOM<sup><small>TM</small></sup> with Wi-Fi</span>
+        <p>
+          The Next, Next Generation Tablet.
+        </p>
+      </li>
+    </ul>
 
-      angular.element(function() {
-        angular.bootstrap(document, ['myApp'])
-      })
-    </script>
+    <p>Total number of phones: 2</p>
   </body>
 </html>
