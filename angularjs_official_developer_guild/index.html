@@ -1,28 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Binding</title>
-    <script src="app/lib/angular.js"></script>
-  </head>
-
+<html lang="en" ng-app ng-strict-di>
   <body>
     <main>
-      <div ng-app ng-init="qty=1;cost=2">
-        <b>Invoice:</b>
-        <div>
-          Quantity: <input type="number" min="0" ng-model="qty">
-        </div>
-
-        <div>
-          Cost: <input type="number" min="0" ng-model="cost">
-        </div>
-
-        <div>
-          <b>Total:</b> {{qty * cost | currency}}
-        </div>
-      </div>
+      <p>1 + 2 = {{ 1 + 2 }}</p>
     </main>
+
+    <script src="app/lib/angular.js"></script>
   </body>
 </html>
