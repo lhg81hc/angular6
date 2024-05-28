@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" ng-app ng-strict-di>
+<html lang="en" ng-controller="MyController">
   <body>
     <main>
-      <p>1 + 2 = {{ 1 + 2 }}</p>
+      <p>Hello {{greetMe}}</p>
     </main>
 
     <script src="app/lib/angular.js"></script>
+    <script>
+      angular.module('myApp', [])
+        .controller('MyController', ['$scope', function ($scope) {
+          $scope.greetMe = 'Thad';
+        }])
+
+      angular.element(function() {
+        angular.bootstrap(document, ['myApp'])
+      })
+    </script>
   </body>
 </html>
